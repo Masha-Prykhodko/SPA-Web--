@@ -10,4 +10,5 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'it-news-angular-app';
+  appTitle = 'News from IT Industry';
 }
