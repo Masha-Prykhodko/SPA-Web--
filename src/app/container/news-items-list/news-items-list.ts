@@ -1,18 +1,20 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { NewsItem } from '../../shared/models/news-item.model';
 import {DatePipe} from "@angular/common";
-import {NewsItem} from "./shared/models/news-item.model";
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet, DatePipe],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  selector: 'app-news-items-list',
+  imports: [
+    DatePipe
+  ],
+  templateUrl: './news-items-list.html',
+  styleUrl: './news-items-list.css',
 })
-export class AppComponent {
-  title = 'it-news-angular-app';
-  appTitle = 'News from IT industry';
+export class NewsItemsList {
+
+}
+export class NewsItemsListComponent {
+
   newsItems: NewsItem[] = [
     new NewsItem(
       1,
@@ -55,4 +57,5 @@ export class AppComponent {
       true
     )
   ];
+
 }
