@@ -38,8 +38,31 @@
   margin: 5px 0;
   font-size: 0.9rem;
 }
+.recent {
+  border-color: #28a745;
+  background-color: #e9fbe9;
+}
 
+.old {
+  border-color: #ccc;
+  background-color: #f9f9f9;
+}
+
+.recent-label {
+  color: #28a745;
+  font-weight: bold;
+}
+
+.old-label {
+  color: #999;
+  font-style: italic;
+}
 .actual {
   color: green;
   font-weight: bold;
+}
+
+.not-actual {
+  color: gray;
+  font-style: italic;
 }

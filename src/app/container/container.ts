@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
 import {NewsItem} from "../shared/models/news-item.model";
-import {NewsItemsList} from "./news-items-list/news-items-list";
-import {DatePipe} from "@angular/common";
+import { CommonModule } from '@angular/common';
+import { NewsItemCard } from '../container/news-items-list/news-item-card/news-item-card';
 
 @Component({
   selector: 'app-container',
-  imports: [
-    DatePipe ],
+  imports: [CommonModule, NewsItemCard],
   templateUrl: './container.html',
   styleUrl: './container.css',
 })
@@ -24,13 +23,12 @@ export class Container {
       'https://st3.depositphotos.com/2033625/18230/i/450/depositphotos_182302072-stock-photo-it-expert-on-keyboard-button.jpg',
       3.9,
       ['employment', 'IT', 'news', '2025'],
-      true,
-      10
+      true
     ),
     new NewsItem(
       2,
       'Future Technologies of AI',
-      'M.V. Koval`chuk',
+      'M.V. Kovalchuk',
       new Date('2024-11-09'),
       'Technology of AI',
       8,
@@ -52,7 +50,6 @@ export class Container {
       4.2,
       ['conference', 'events', 'internationale', '2025'],
       true
-    )
+    ),
   ];
-
 }

@@ -1,25 +1,8 @@
 <h1>News List</h1>
 <div class="container">
   @for (item of newsItems; track item.id) {
-    <div class="news-card">
-      <img [src]="item.postImage" alt="{{ item.title }}" class="news-image">
-      <div class="news-content">
-        <h2>{{ item.title }}</h2>
-        <p><strong>Author:</strong> {{ item.author }}</p>
-        <p><strong>Publication Date:</strong> {{ item.publicationDate | date:'medium' }}</p>
-        <p><strong>Genre:</strong> {{ item.genre }}</p>
-        <p><strong>Language:</strong> {{ item.language }}</p>
-        <p><strong>Page Count:</strong> {{ item.pageCount }}</p>
-        <p><strong>Rating:</strong> {{ item.rating }} ⭐</p>
-        <p><strong>Keywords:</strong> {{ item.keywords.join(', ') }}</p>
-        @if (item.isActual) {
-          <p class="actual">Current News</p>
-        }
-        @if (item.discountActuality) {
-          <p>Discount: {{ item.discountActuality }}%</p>
-        }
-      </div>
-    </div>
+    <app-news-item-card [item]="item"></app-news-item-card>
   }
 </div>
+
 

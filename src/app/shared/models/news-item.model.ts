@@ -10,7 +10,6 @@ export class NewsItem {
     public postImage: string,
     public rating: number,
     public keywords: string[],
-    public isActual: boolean,
-    public discountActuality?: number
+    public isActual: boolean
   ) { }
 }

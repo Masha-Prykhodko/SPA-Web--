@@ -1,19 +1,20 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import {DatePipe} from "@angular/common";
 import {NewsItem} from "./shared/models/news-item.model";
+import { CommonModule } from '@angular/common';
+import { NewsItemCard } from '../app/container/news-items-list/news-item-card/news-item-card';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, DatePipe],
+  imports: [RouterOutlet, NewsItemCard],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'it-news-angular-app';
   appTitle = 'News from IT industry';
-  newsItems: NewsItem[] = [
+    newsItems: NewsItem[] = [
     new NewsItem(
       1,
       'Employment in IT',
@@ -25,13 +26,12 @@ export class AppComponent {
       'https://st3.depositphotos.com/2033625/18230/i/450/depositphotos_182302072-stock-photo-it-expert-on-keyboard-button.jpg',
       3.9,
       ['employment', 'IT', 'news', '2025'],
-      true,
-      10
+      true
     ),
     new NewsItem(
       2,
       'Future Technologies of AI',
-      'M.V. Koval`chuk',
+      'M.V. Kovalchuk',
       new Date('2024-11-09'),
       'Technology of AI',
       8,
@@ -53,6 +53,6 @@ export class AppComponent {
       4.2,
       ['conference', 'events', 'internationale', '2025'],
       true
-    )
+    ),
   ];
 }

@@ -1,20 +1,16 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { NewsItem } from '../../shared/models/news-item.model';
-import {DatePipe} from "@angular/common";
+import { NewsItemCard } from '../news-items-list/news-item-card/news-item-card';
 
 @Component({
   selector: 'app-news-items-list',
-  imports: [
-    DatePipe
-  ],
+  standalone: true,
+  imports: [CommonModule, NewsItemCard],
   templateUrl: './news-items-list.html',
-  styleUrl: './news-items-list.css',
+  styleUrls: ['./news-items-list.css'],
 })
 export class NewsItemsList {
-
-}
-export class NewsItemsListComponent {
-
   newsItems: NewsItem[] = [
     new NewsItem(
       1,
@@ -27,13 +23,12 @@ export class NewsItemsListComponent {
       'https://st3.depositphotos.com/2033625/18230/i/450/depositphotos_182302072-stock-photo-it-expert-on-keyboard-button.jpg',
       3.9,
       ['employment', 'IT', 'news', '2025'],
-      true,
-      10
+      true
     ),
     new NewsItem(
       2,
       'Future Technologies of AI',
-      'M.V. Koval`chuk',
+      'M.V. Kovalchuk',
       new Date('2024-11-09'),
       'Technology of AI',
       8,
@@ -55,7 +50,13 @@ export class NewsItemsListComponent {
       4.2,
       ['conference', 'events', 'internationale', '2025'],
       true
-    )
+    ),
   ];
 
+  isRecentNews(date: Date): boolean {
+    const now = new Date();
+    const diffTime = Math.abs(now.getTime() - new Date(date).getTime());
+    const diffDays = diffTime / (1000 * 60 * 60 * 24);
+    return diffDays <= 30;
+  }
 }

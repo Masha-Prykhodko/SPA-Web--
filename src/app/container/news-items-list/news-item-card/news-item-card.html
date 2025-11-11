@@ -1,1 +1,25 @@
-<p>news-item-card works!</p>
+<div class="news-card">
+  <img [src]="item.postImage" alt="{{ item.title }}" class="news-image">
+  <div class="news-content">
+    <h2>{{ item.title }}</h2>
+    <p><strong>Author:</strong> {{ item.author }}</p>
+    <p><strong>Date:</strong> {{ item.publicationDate | date:'mediumDate' }}</p>
+    <p><strong>Genre:</strong> {{ item.genre }}</p>
+    <p><strong>Language:</strong> {{ item.language }}</p>
+    <p><strong>Pages:</strong> {{ item.pageCount }}</p>
+    <p><strong>Rating:</strong> {{ item.rating }} ⭐</p>
+    <p><strong>Keywords:</strong> {{ item.keywords.join(', ') }}</p>
+
+    @if (isRecentNews(item.publicationDate)) {
+      <p class="recent-label">🕒 Recent News</p>
+    } @else {
+      <p class="old-label">📜 Older News</p>
+    }
+    @if (item.isActual) {
+      <p class="actual">Current News</p>
+    } @else {
+      <p class="not-actual">Not Current</p>
+    }
+
+  </div>
+</div>
