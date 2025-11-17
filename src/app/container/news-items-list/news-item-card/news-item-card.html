@@ -10,6 +10,10 @@
     <p><strong>Rating:</strong> {{ item.rating }} ⭐</p>
     <p><strong>Keywords:</strong> {{ item.keywords.join(', ') }}</p>
 
+    <button class="details-btn" (click)="onSelectItem()">
+      More details
+    </button>
+
     @if (isRecentNews(item.publicationDate)) {
       <p class="recent-label">🕒 Recent News</p>
     } @else {

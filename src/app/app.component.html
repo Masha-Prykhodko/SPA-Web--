@@ -3,12 +3,22 @@
 </header>
 
 <header></header>
+<div class="container">
 
 <h1>News List</h1>
-<div class="container">
-  @for (item of newsItems; track item.id) {
-    <app-news-item-card [item]="item"></app-news-item-card>
-  }
+<input
+  type="text"
+  placeholder="Search..."
+  [(ngModel)]="searchText"
+  class="search-input"
+/>
+
+@for (item of filteredItems(); track item.id) {
+  <app-news-item-card
+    [item]="item"
+    (select)="onItemSelected($event)"
+  ></app-news-item-card>
+}
 </div>
 
 

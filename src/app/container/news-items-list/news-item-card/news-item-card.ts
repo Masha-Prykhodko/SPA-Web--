@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule, DatePipe } from '@angular/common';
 import { NewsItem } from '../../../shared/models/news-item.model';
 
@@ -10,7 +10,13 @@ import { NewsItem } from '../../../shared/models/news-item.model';
   styleUrls: ['./news-item-card.css']
 })
 export class NewsItemCard {
-  @Input() item!: NewsItem;
+  @Input() item!: NewsItem; // Офіційно оголошено  input для news-item-card
+
+  @Output() select = new EventEmitter<NewsItem>(); // Додано Output та EventEmitter
+
+  onSelectItem(): void {
+    this.select.emit(this.item);
+  }
   isRecentNews(date: Date): boolean {
     const now = new Date();
     const diffTime = Math.abs(now.getTime() - new Date(date).getTime());

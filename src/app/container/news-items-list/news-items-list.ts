@@ -1,16 +1,20 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { NewsItem } from '../../shared/models/news-item.model';
 import { NewsItemCard } from '../news-items-list/news-item-card/news-item-card';
 
 @Component({
   selector: 'app-news-items-list',
   standalone: true,
-  imports: [CommonModule, NewsItemCard],
+  imports: [CommonModule, FormsModule, NewsItemCard],
   templateUrl: './news-items-list.html',
   styleUrls: ['./news-items-list.css'],
 })
 export class NewsItemsList {
+
+  searchText: string = ''; // Виконання двосторонньої прив'язки
+
   newsItems: NewsItem[] = [
     new NewsItem(
       1,
@@ -52,6 +56,24 @@ export class NewsItemsList {
       true
     ),
   ];
+
+  filteredItems(): NewsItem[] {
+    if (!this.searchText.trim()) return this.newsItems;
+
+    const text = this.searchText.toLowerCase();
+
+    return this.newsItems.filter(item =>
+      item.title.toLowerCase().includes(text) ||
+      item.author.toLowerCase().includes(text) ||
+      item.genre.toLowerCase().includes(text) ||
+      item.language.toLowerCase().includes(text) ||
+      item.keywords.some(k => k.toLowerCase().includes(text))
+    );
+  } // Додано пошук і фільтрацію елементів при ньому
+
+  onItemSelected(selected: NewsItem) {
+    console.log('Selected item:', selected);
+  } // Додано подію вибір картки
 
   isRecentNews(date: Date): boolean {
     const now = new Date();
