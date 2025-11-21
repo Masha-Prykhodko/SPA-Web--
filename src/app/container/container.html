@@ -1,13 +1,14 @@
-<h1>News List</h1>
+
 <div class="container">
 
-  <input
-    type="text"
-    placeholder="Search..."
-    [(ngModel)]="searchText"
-    class="search-input"
-  />
-
+  <div class="search-box">
+    <input
+      type="text"
+      placeholder="Search..."
+      [(ngModel)]="searchText"
+    />
+  </div>
+  <h1>News List</h1>
   @for (item of newsItems; track item.id) {
     <app-news-item-card
       [item]="item"

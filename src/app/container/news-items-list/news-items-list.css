@@ -67,11 +67,14 @@
   font-style: italic;
 }
 
-.search-input {
+.search-box {
   width: 100%;
   padding: 10px;
-  margin-bottom: 20px;
+  text-align: center;
+}
+
+.search-box input {
+  width: 60%;
+  padding: 10px;
   font-size: 16px;
-  border-radius: 6px;
-  border: 1px solid #999;
 }
