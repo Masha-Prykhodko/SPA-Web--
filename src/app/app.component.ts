@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {NewsItem} from "./shared/models/news-item.model";
 import { CommonModule } from '@angular/common';
 import { NewsItemCard } from '../app/container/news-items-list/news-item-card/news-item-card';
 import {FormsModule} from "@angular/forms";
 import {DataService} from "./shared/services/data";
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -17,27 +18,28 @@ export class AppComponent {
   title = 'it-news-angular-app';
   appTitle = 'News from IT industry';
   newsItems: NewsItem[] = [];
+  searchText: string = '';
   constructor(private dataService: DataService) {}
 
+  private itemsSub!: Subscription;
+
   ngOnInit(): void {
-    this.newsItems = this.dataService.getItems();
+    this.itemsSub = this.dataService.getItems().subscribe(items => {
+      this.newsItems = items;
+    });
   }
-  searchText: string = '';
 
-  filteredItems(): NewsItem[] {
-    if (!this.searchText.trim()) return this.newsItems;
-
-    const text = this.searchText.toLowerCase();
-    return this.newsItems.filter(item =>
-      item.title.toLowerCase().includes(text) ||
-      item.author.toLowerCase().includes(text) ||
-      item.genre.toLowerCase().includes(text) ||
-      item.language.toLowerCase().includes(text) ||
-      item.keywords.some(k => k.toLowerCase().includes(text))
-    );
+  onSearchChange() {
+    this.dataService.searchItems(this.searchText);
   }
 
   onItemSelected(selected: NewsItem) {
     console.log('Selected item:', selected);
+  }
+
+  ngOnDestroy(): void {
+    if (this.itemsSub) {
+      this.itemsSub.unsubscribe();
+    }
   }
 }

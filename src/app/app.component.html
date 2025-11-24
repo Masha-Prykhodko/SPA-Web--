@@ -4,25 +4,26 @@
 
 <header></header>
 <div class="container">
-
   <div class="search-box">
     <input
       type="text"
-      placeholder="Search..."
       [(ngModel)]="searchText"
+      (input)="onSearchChange()"
+      placeholder="Search..."
+      class="search-bar"
     />
+
+    <button (click)="onSearchChange()" class="search-button">
+      Search
+    </button>
   </div>
-
   <h1>News List</h1>
-
-@for (item of filteredItems(); track item.id) {
-  <app-news-item-card
-    [item]="item"
-    (select)="onItemSelected($event)"
-  ></app-news-item-card>
-}
+  <div class="container">
+    @for (item of newsItems; track item.id) {
+      <app-news-item-card [item]="item"></app-news-item-card>
+    }
+  </div>
 </div>
-
 
 <footer></footer>
 
