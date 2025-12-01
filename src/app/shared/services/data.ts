@@ -74,6 +74,10 @@ export class DataService {
     this.itemsSubject.next(filtered);
   } // Метод для виконання пошуку, перенесений у сервіс
 
+  getItemById(id: number): NewsItem | undefined {
+    return this.itemsSubject.value.find(item => item.id === id);
+  } // Метод для пошуку обраної карти, задля відображення деталей
+
   // Методи для майбутнього використання
   addItem(item: NewsItem): void {
     const current = this.itemsSubject.value;

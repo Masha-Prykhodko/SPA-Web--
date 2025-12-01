@@ -10,7 +10,7 @@
     <p><strong>Rating:</strong> {{ item.rating }} ⭐</p>
     <p><strong>Keywords:</strong> {{ item.keywords.join(', ') }}</p>
 
-    <button class="details-btn" (click)="onSelectItem()">
+    <button [routerLink]="['/items', item.id]" class="details-btn">
       More details
     </button>
 

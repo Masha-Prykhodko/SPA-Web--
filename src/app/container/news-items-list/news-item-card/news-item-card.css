@@ -43,3 +43,15 @@
   color: gray;
   font-style: italic;
 }
+.details-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: #1a73e8;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.details-link:hover {
+  text-decoration: underline;
+}
