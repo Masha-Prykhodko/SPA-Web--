@@ -38,7 +38,7 @@ export class DataService {
       3,
       'Internationale conference of Computer science',
       'O.M. Trevor',
-      new Date('2025-10-31'),
+      new Date('2025-12-01'),
       'Conferences',
       3.5,
       'English',

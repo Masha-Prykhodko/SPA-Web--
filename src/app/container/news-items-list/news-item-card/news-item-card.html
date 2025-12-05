@@ -1,4 +1,4 @@
-<div class="news-card">
+<div class="news-card" appHoverStyle>
   <img [src]="item.postImage" alt="{{ item.title }}" class="news-image">
   <div class="news-content">
     <h2>{{ item.title }}</h2>
@@ -19,11 +19,11 @@
     } @else {
       <p class="old-label">📜 Older News</p>
     }
-    @if (item.isActual) {
-      <p class="actual">Current News</p>
-    } @else {
-      <p class="not-actual">Not Current</p>
-    }
+
+    <p class="actuality-label"
+       [ngClass]="(item.publicationDate | newsActuality).status">
+      {{ (item.publicationDate | newsActuality).label }}
+    </p>
 
   </div>
 </div>

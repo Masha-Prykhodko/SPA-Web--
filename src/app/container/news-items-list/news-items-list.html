@@ -13,11 +13,9 @@
     </button>
   </div>
 
-  <div class="container">
-    @for (item of newsItems; track item.id) {
+  <div class="list-container">
+    @for (item of (items$ | async); track item.id) {
       <app-news-item-card [item]="item"></app-news-item-card>
     }
   </div>
-
-
-
+</div>

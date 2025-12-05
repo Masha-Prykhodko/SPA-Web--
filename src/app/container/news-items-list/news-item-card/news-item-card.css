@@ -34,15 +34,25 @@
   color: #999;
   font-style: italic;
 }
+
+.actuality-label {
+  margin-top: 10px;
+  display: inline-block;
+  font-size: 1rem;
+}
+
 .actual {
   color: green;
-  font-weight: bold;
+  font-style: normal;
+  font-weight: normal;
 }
 
 .not-actual {
   color: gray;
   font-style: italic;
+  font-weight: normal;
 }
+
 .details-link {
   display: inline-block;
   margin-top: 10px;
