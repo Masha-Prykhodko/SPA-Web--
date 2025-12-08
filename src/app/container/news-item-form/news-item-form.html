@@ -1,0 +1,52 @@
+<form [formGroup]="itemForm" (ngSubmit)="onSubmit()">
+  <label>Title</label>
+  <input formControlName="title" />
+  @if (itemForm.get('title')?.invalid && itemForm.get('title')?.touched) {
+    <span class="error">Title is required</span>
+  }
+  <label>Author</label>
+  <input formControlName="author" />
+  @if (itemForm.get('author')?.invalid && itemForm.get('author')?.touched) {
+    <span class="error">Author is required</span>
+  }
+  <label>Publication date</label>
+  <input type="date" formControlName="publicationDate" />
+  @if (itemForm.get('publicationDate')?.invalid && itemForm.get('publicationDate')?.touched) {
+    <span class="error">Date is required</span>
+  }
+  <label>Genre</label>
+  <input formControlName="genre" />
+  @if (itemForm.get('genre')?.invalid && itemForm.get('genre')?.touched) {
+    <span class="error">Genre is required</span>
+  }
+  <label>Page count</label>
+  <input type="number" formControlName="pageCount" />
+  @if (itemForm.get('pageCount')?.invalid && itemForm.get('pageCount')?.touched) {
+    <span class="error">Page count is required</span>
+  }
+  <label>Language</label>
+  <input formControlName="language" />
+  @if (itemForm.get('language')?.invalid && itemForm.get('language')?.touched) {
+    <span class="error">Language is required</span>
+  }
+  <label>Image URL</label>
+  <input formControlName="postImage" />
+  @if (itemForm.get('postImage')?.invalid && itemForm.get('postImage')?.touched) {
+    <span class="error">Enter a valid URL</span>
+  }
+  <label>Rating</label>
+  <input type="number" formControlName="rating" />
+  @if (itemForm.get('rating')?.invalid && itemForm.get('rating')?.touched) {
+    <span class="error">Rating must be 0–5</span>
+  }
+  <label>Keywords (comma separated)</label>
+  <input formControlName="keywords" />
+  @if (itemForm.get('keywords')?.invalid && itemForm.get('keywords')?.touched) {
+    <span class="error">Keywords are required</span>
+  }
+  <label>
+    <input type="checkbox" formControlName="isActual" />
+    Is actual?
+  </label>
+  <button type="submit">Create item</button>
+</form>

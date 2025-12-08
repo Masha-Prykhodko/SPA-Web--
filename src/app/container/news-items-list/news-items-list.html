@@ -13,6 +13,10 @@
     </button>
   </div>
 
+  <button [routerLink]="['/add-item']" class="add-btn">
+    Add Item
+  </button>
+
   <div class="list-container">
     @for (item of (items$ | async); track item.id) {
       <app-news-item-card [item]="item"></app-news-item-card>

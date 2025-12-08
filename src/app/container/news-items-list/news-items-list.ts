@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NewsItem } from '../../shared/models/news-item.model';
+import { RouterLink} from "@angular/router";
 import { NewsItemCard } from '../news-items-list/news-item-card/news-item-card';
 import { DataService } from '../../shared/services/data';
 import {Observable} from "rxjs";
@@ -9,7 +10,7 @@ import {Observable} from "rxjs";
 @Component({
   selector: 'app-news-items-list',
   standalone: true,
-  imports: [CommonModule, FormsModule, NewsItemCard],
+  imports: [CommonModule, FormsModule, NewsItemCard, RouterLink],
   templateUrl: './news-items-list.html',
   styleUrls: ['./news-items-list.css'],
 })

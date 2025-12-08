@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {NewsItem} from "./shared/models/news-item.model";
 import { CommonModule } from '@angular/common';
+import {RouterLink} from "@angular/router";
 import { NewsItemCard } from '../app/container/news-items-list/news-item-card/news-item-card';
 import {FormsModule} from "@angular/forms";
 import {DataService} from "./shared/services/data";
@@ -10,7 +11,7 @@ import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NewsItemCard, FormsModule],
+  imports: [RouterOutlet, NewsItemCard, FormsModule, RouterLink],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

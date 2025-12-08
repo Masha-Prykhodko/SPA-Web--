@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { NewsItem } from '../../shared/models/news-item.model';
 import { BehaviorSubject, Observable, of } from 'rxjs';
+import { NewsItemForm} from "../../container/news-item-form/news-item-form";
 
 @Injectable({
   providedIn: 'root',
