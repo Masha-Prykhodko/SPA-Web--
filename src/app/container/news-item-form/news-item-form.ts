@@ -33,7 +33,7 @@ export class NewsItemForm {
     if (this.itemForm.valid) {
       const formValue = this.itemForm.value;
       const newItem = new NewsItem(
-        Date.now(), // id (можна генерувати як timestamp)
+        Date.now(),
         formValue.title,
         formValue.author,
         new Date(formValue.publicationDate),
@@ -42,7 +42,7 @@ export class NewsItemForm {
         formValue.language,
         formValue.postImage,
         formValue.rating,
-        formValue.keywords.split(',').map((k: string) => k.trim()), // перетворюємо рядок у масив
+        formValue.keywords.split(',').map((k: string) => k.trim()),
         formValue.isActual
       ); // Якщо форма валідна створюємо новий елемент NewsItem
 
