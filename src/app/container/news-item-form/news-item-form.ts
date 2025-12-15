@@ -33,7 +33,7 @@ export class NewsItemForm {
     if (this.itemForm.valid) {
       const formValue = this.itemForm.value;
       const newItem = new NewsItem(
-        Date.now(), // id (можна генерувати як timestamp)
+        Date.now(),
         formValue.title,
         formValue.author,
         new Date(formValue.publicationDate),
@@ -42,14 +42,19 @@ export class NewsItemForm {
         formValue.language,
         formValue.postImage,
         formValue.rating,
-        formValue.keywords.split(',').map((k: string) => k.trim()), // перетворюємо рядок у масив
+        formValue.keywords.split(',').map((k: string) => k.trim()),
         formValue.isActual
       ); // Якщо форма валідна створюємо новий елемент NewsItem
 
-      this.dataService.addItem(newItem);  // Викликаємо сервіс для додавання елемента
-      this.router.navigate(['/items']);// Після успішного додавання, перенаправлення на список новин
-
-      console.log('✔ Form data:', this.itemForm.value);
+      this.dataService.addItem(newItem).subscribe({  // Викликаємо сервіс для додавання елемента
+        next: () => {
+          console.log('✔ Item added successfully');
+          this.router.navigate(['/items']); // Перехід на список після додавання
+        },
+        error: (err) => {
+          console.error('❌ Error adding item', err);
+        }
+      });
     } else {
       console.log('❌ Form is invalid');
       this.itemForm.markAllAsTouched();

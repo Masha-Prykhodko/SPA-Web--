@@ -11,9 +11,12 @@
     "e2e": "ng e2e"
   },
   "dependencies": {
+    "@angular/animations": "^20.3.9",
     "@angular/core": "^20.2.2",
     "@angular/forms": "^20.3.9",
+    "@angular/platform-browser": "^20.3.9",
     "@angular/router": "^20.2.2",
+    "ngx-toastr": "^19.1.0",
     "zone.js": "^0.15.1"
   },
   "devDependencies": {
