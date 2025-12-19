@@ -1,0 +1,128 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "title": "Employment in IT",
+      "author": "D.I. Reedl",
+      "publicationDate": "2025-11-10",
+      "genre": "Employment",
+      "pageCount": 5,
+      "language": "English",
+      "postImage": "https://st3.depositphotos.com/2033625/18230/i/450/depositphotos_182302072-stock-photo-it-expert-on-keyboard-button.jpg",
+      "rating": 3.9,
+      "keywords": [
+        "employment",
+        "IT",
+        "news",
+        "2025"
+      ],
+      "isActual": true
+    },
+    {
+      "id": 2,
+      "title": "Future Technologies of AI",
+      "author": "M.V. Kovalchuk",
+      "publicationDate": "2024-11-09",
+      "genre": "Technology of AI",
+      "pageCount": 8,
+      "language": "English",
+      "postImage": "https://dialab.dp.ua/wp-content/uploads/2025/08/0-9.jpg",
+      "rating": 4.8,
+      "keywords": [
+        "technology",
+        "innovation",
+        "AI",
+        "2024"
+      ],
+      "isActual": false
+    },
+    {
+      "id": 3,
+      "title": "Internationale conference of Computer science",
+      "author": "O.M. Trevor",
+      "publicationDate": "2025-12-01",
+      "genre": "Conferences",
+      "pageCount": 3.5,
+      "language": "English",
+      "postImage": "https://www.shutterstock.com/image-photo/cyber-security-team-working-operations-260nw-2503714065.jpg",
+      "rating": 4.2,
+      "keywords": [
+        "conference",
+        "events",
+        "internationale",
+        "2025"
+      ],
+      "isActual": true
+    },
+    {
+      "id": "4",
+      "title": "New IT inventions",
+      "author": "S.A. Reynolds",
+      "publicationDate": "2025-12-11",
+      "genre": "Inventions",
+      "pageCount": 5,
+      "language": "English",
+      "postImage": "https://petrowich.com.ua/files/uploads/2019/06/db3b372-it1_690x426.jpg",
+      "rating": 4.1,
+      "keywords": [
+        "inventions",
+        "IT",
+        "2025"
+      ],
+      "isActual": true
+    },
+    {
+      "id": 5,
+      "title": "IT modern specialities",
+      "author": "D.M. Weetny",
+      "publicationDate": "2025-12-16T00:00:00.000Z",
+      "genre": "Speciality",
+      "pageCount": 5,
+      "language": "English",
+      "postImage": "https://img.freepik.com/premium-photo/it-professional-working-with-mobile-device-laptop_1006743-1348.jpg?semt=ais_hybrid&w=740&q=80",
+      "rating": 3.5,
+      "keywords": [
+        "speciality",
+        "IT",
+        "2025"
+      ],
+      "isActual": true
+    },
+    {
+      "id": 6,
+      "title": "IT in Ukraine 2024",
+      "author": "K.T. Linchenko",
+      "publicationDate": "2024-02-21T00:00:00.000Z",
+      "genre": "Ukraine news",
+      "pageCount": 5,
+      "language": "English",
+      "postImage": "https://blog.youcontrol.market/content/images/size/w960/2023/09/990_440-IT.png",
+      "rating": 4.7,
+      "keywords": [
+        "Ukraine",
+        "IT",
+        "develope",
+        "2024"
+      ],
+      "isActual": false
+    },
+    {
+      "id": 7,
+      "title": "Start in IT",
+      "author": "A.L. Minch",
+      "publicationDate": "2025-12-09T00:00:00.000Z",
+      "genre": "IT ",
+      "pageCount": 6,
+      "language": "English",
+      "postImage": "https://dku.in.ua/files/logos/IT.jpg",
+      "rating": 3.9,
+      "keywords": [
+        "start",
+        "IT",
+        "begginers",
+        "2025"
+      ],
+      "isActual": true
+    }
+  ]
+}
