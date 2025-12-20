@@ -1,7 +1,7 @@
 {
   "items": [
     {
-      "id": 1,
+      "id": "1",
       "title": "Employment in IT",
       "author": "D.I. Reedl",
       "publicationDate": "2025-11-10",
@@ -19,7 +19,7 @@
       "isActual": true
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "Future Technologies of AI",
       "author": "M.V. Kovalchuk",
       "publicationDate": "2024-11-09",
@@ -37,7 +37,7 @@
       "isActual": false
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "Internationale conference of Computer science",
       "author": "O.M. Trevor",
       "publicationDate": "2025-12-01",
@@ -72,7 +72,7 @@
       "isActual": true
     },
     {
-      "id": 5,
+      "id": "5",
       "title": "IT modern specialities",
       "author": "D.M. Weetny",
       "publicationDate": "2025-12-16T00:00:00.000Z",
@@ -89,7 +89,7 @@
       "isActual": true
     },
     {
-      "id": 6,
+      "id": "6",
       "title": "IT in Ukraine 2024",
       "author": "K.T. Linchenko",
       "publicationDate": "2024-02-21T00:00:00.000Z",
@@ -107,7 +107,7 @@
       "isActual": false
     },
     {
-      "id": 7,
+      "id": "7",
       "title": "Start in IT",
       "author": "A.L. Minch",
       "publicationDate": "2025-12-09T00:00:00.000Z",
@@ -123,6 +123,23 @@
         "2025"
       ],
       "isActual": true
+    },
+    {
+      "id":"8",
+      "title": "Timemanagment in IT",
+      "author": "E.L. Demchuk",
+      "publicationDate": "2025-02-20T00:00:00.000Z",
+      "genre": "Timemanagment",
+      "pageCount": 7,
+      "language": "English",
+      "postImage": "https://s.mind.ua/img/forall/a/201899/63.jpg?1544043015",
+      "rating": 5,
+      "keywords": [
+        "timemanagment",
+        "IT",
+        "2025"
+      ],
+      "isActual": false
     }
   ]
 }
