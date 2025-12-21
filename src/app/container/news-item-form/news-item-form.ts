@@ -46,10 +46,15 @@ export class NewsItemForm {
         formValue.isActual
       ); // Якщо форма валідна створюємо новий елемент NewsItem
 
-      this.dataService.addItem(newItem);  // Викликаємо сервіс для додавання елемента
-      this.router.navigate(['/items']);// Після успішного додавання, перенаправлення на список новин
-
-      console.log('✔ Form data:', this.itemForm.value);
+      this.dataService.addItem(newItem).subscribe({  // Викликаємо сервіс для додавання елемента
+        next: () => {
+          console.log('✔ Item added successfully');
+          this.router.navigate(['/items']); // Перехід на список після додавання
+        },
+        error: (err) => {
+          console.error('❌ Error adding item', err);
+        }
+      });
     } else {
       console.log('❌ Form is invalid');
       this.itemForm.markAllAsTouched();

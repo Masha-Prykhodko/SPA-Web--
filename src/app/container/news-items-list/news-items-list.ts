@@ -21,7 +21,8 @@ export class NewsItemsList {
   items$!: Observable<NewsItem[]>;
 
   constructor(private dataService: DataService) {
-    this.items$ = this.dataService.items$;
+    this.items$ = this.dataService.items$; // Observable для шаблону
+    this.dataService.getItems(); // завантаження даних
   }
 
   onSearchChange() {
@@ -32,5 +33,4 @@ export class NewsItemsList {
     console.log('Selected item:', selected);
   } // При виборі елемента
 }
-
 
