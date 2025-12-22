@@ -6,12 +6,13 @@ import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { apiInterceptor } from './app/shared/interceptors/api-interceptor';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideToastr } from 'ngx-toastr';
+import { authInterceptor } from './app/shared/interceptors/auth-interceptor';
 
 bootstrapApplication(AppComponent, {
   providers: [
     provideRouter(routes),
     provideHttpClient(
-      withInterceptors([apiInterceptor]) // підключили interceptor
+      withInterceptors([apiInterceptor, authInterceptor]) // підключили interceptor
     ),//додано HttpClientModule
     provideAnimations(),
     provideToastr({

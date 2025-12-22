@@ -78,4 +78,16 @@
   padding: 10px;
   font-size: 16px;
 }
+.auth-buttons {
+  display: flex;
+  gap: 12px;
+}
 
+.auth-link {
+  padding: 6px 14px;
+  border-radius: 6px;
+  background-color: #1976d2;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
