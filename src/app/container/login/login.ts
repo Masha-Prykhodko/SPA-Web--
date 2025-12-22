@@ -22,7 +22,6 @@ export class Login {
   }
 
   onSubmit() {
-    if (this.loginForm.valid) {
       if (this.loginForm.valid) {
         const credentials = this.loginForm.getRawValue();
         this.authService.login({
@@ -39,7 +38,6 @@ export class Login {
           } // Перевірка помилок при підтвердженні даних форми
         });
       }
-    }
   }
 }
 
